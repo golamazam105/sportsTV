@@ -3,7 +3,7 @@ name: ⏱️ Automated Sports M3U Compiler
 on:
   schedule:
     - cron: '*/10 * * * *' # প্রতি ১০ মিনিটে অটো-রান হবে
-  workflow_dispatch: # ইচ্ছে হলে ম্যানুয়ালি রান করার বাটন
+  workflow_dispatch: # ম্যানুয়ালি রান করার বাটন
 
 jobs:
   build-and-sync:
@@ -16,7 +16,7 @@ jobs:
     - name: 🐍 Setup Python Environment
       uses: actions/setup-python@v5
       with:
-        python-file: '3.10'
+        python-version: '3.11' # টাইপো ফিক্সড এবং লেটেস্ট পাইথন সেট করা হলো
 
     - name: 📦 Install Necessary Dependencies
       run: |
