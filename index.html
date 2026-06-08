@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricfy Premium Sports IPTV Platform</title>
+  <meta name="referrer" content="no-referrer">
+  
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <style>
+    /* -----------------------------------------------
+    Cricfy-Style Premium Sports IPTV UI - Standard HTML Edition
+    -------------------------------------------------- */
+    html, body { margin: 0; padding: 0; background-color: #0d0e12; color: #ffffff; font-family: 'Segoe UI', Roboto, sans-serif; min-height: 100vh; }
+    
+    .theme-wrapper { display: flex; flex-direction: column; gap: 20px; padding: 20px; box-sizing: border-box; max-width: 1400px; margin: 0 auto; }
+    
+    /* Neon Sporty Player Framework */
+    #player-box { width: 100%; height: 550px; background: #000000; border-radius: 16px; overflow: hidden; box-shadow: 0 0 25px rgba(0, 255, 136, 0.15); border: 1px solid #1f2d24; position: relative; }
+    #video-player { width: 100%; height: 100%; object-fit: contain; }
+    
+    /* Cricfy Server Switcher Grid */
+    #server-switcher-zone { display: flex; gap: 10px; flex-wrap: wrap; margin-top: -5px; padding: 15px; background: #13151b; border-radius: 12px; border: 1px solid #1f242e; display: none; }
+    .server-title { font-size: 13px; color: #8f9cae; font-weight: bold; width: 100%; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    .server-btn { background: #1d212c; color: #cbd5e1; border: 1px solid #2e3545; padding: 10px 22px; font-size: 14px; font-weight: 700; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; }
+    .server-btn:hover { background: #2e3545; color: #00ff88; }
+    .server-btn.active { background: linear-gradient(135deg, #00ff88, #00b359); color: #000000; border-color: #00ff88; box-shadow: 0 4px 15px rgba(0,255,136,0.3); }
+
+    /* Engine Sync Utilities */
+    .refresh-btn { background: linear-gradient(90deg, #00ff88, #00b359); color: #000000; border: none; padding: 14px 32px; font-size: 15px; font-weight: 800; border-radius: 50px; cursor: pointer; align-self: center; box-shadow: 0 4px 20px rgba(0,255,136,0.25); transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; text-transform: uppercase; margin: 10px auto; }
+    .refresh-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(0,255,136,0.4); }
+    
+    /* Navigation Bars */
+    #category-container { display: flex; gap: 10px; overflow-x: auto; padding: 5px 0; width: 100%; box-sizing: border-box; scrollbar-width: none; }
+    #category-container::-webkit-scrollbar { display: none; }
+    
+    .category-btn { background: #13151b; color: #8f9cae; border: 1px solid #1f242e; padding: 12px 24px; border-radius: 30px; cursor: pointer; font-weight: 700; font-size: 14px; transition: all 0.2s ease; white-space: nowrap; }
+    .category-btn:hover { background: #1f242e; color: #ffffff; }
+    .category-btn.active { background: #1f2d24; color: #00ff88; border-color: #00ff88; box-shadow: inset 0 0 10px rgba(0,255,136,0.1); }
+
+    /* Channels Workspace Layout */
+    #channel-list-box { background: #13151b; padding: 25px; border-radius: 16px; border: 1px solid #1f242e; box-shadow: 0 4px 30px rgba(0,0,0,0.4); display: flex; flex-direction: column; gap: 20px; }
+    
+    #search { width: 100%; padding: 15px 20px; border-radius: 12px; background: #0d0e12; border: 1px solid #2e3545; color: #ffffff; box-sizing: border-box; font-size: 16px; transition: 0.3s; }
+    #search:focus { border-color: #00ff88; outline: none; box-shadow: 0 0 10px rgba(0,255,136,0.1); }
+    
+    .channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 15px; max-height: 520px; overflow-y: auto; padding-right: 8px; }
+    
+    /* Premium Sports Card Elements */
+    .channel-card { background: #1d212c; padding: 15px 10px; border-radius: 14px; text-align: center; cursor: pointer; border: 1px solid #2e3545; font-weight: 700; font-size: 14px; transition: all 0.2s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 120px; box-sizing: border-box; color: #e2e8f0; position: relative; overflow: hidden; }
+    .channel-card:hover { border-color: #00ff88; transform: translateY(-3px); background: #242936; }
+    .channel-card.active { background: #1f2d24; border-color: #00ff88; color: #00ff88; }
+    .channel-card img { max-height: 50px; max-width: 85%; object-fit: contain; display: block; margin: 0 auto; background: transparent; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3)); }
+    
+    /* Live Indicator Tag */
+    .channel-card::before { content: 'LIVE'; position: absolute; top: 8px; right: 8px; font-size: 9px; background: #ef4444; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; }
+
+    .channel-grid::-webkit-scrollbar { width: 6px; }
+    .channel-grid::-webkit-scrollbar-track { background: #0d0e12; }
+    .channel-grid::-webkit-scrollbar-thumb { background: #2e3545; border-radius: 10px; }
+    .channel-grid::-webkit-scrollbar-thumb:hover { background: #00ff88; }
+
+    @media (max-width: 768px) {
+      .theme-wrapper { padding: 10px; }
+      #player-box { height: 240px; }
+      .channel-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="theme-wrapper">
+    
+    <div id="player-box">
+      <video autoplay controls id="video-player" poster="https://i.imgur.com/vDUIunw.png"></video>
+    </div>
+    
+    <div id="server-switcher-zone">
+      <div class="server-title">⚡ Available Servers (যদি খেলা বাফার করে তবে সার্ভার বদলান):</div>
+      <div id="server-buttons-container" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+    </div>
+    
+    <button class="refresh-btn" id="sync-refresh-btn">🔄 SYNC LIVE STREAMS</button>
+    
+    <div id="category-container"></div>
+    
+    <div id="channel-list-box">
+      <input id="search" placeholder="সার্চ করুন (उदा: Star Sports, T Sports)..." type="text">
+      <div class="channel-grid" id="grid">লাইভ স্পোর্টস ডাটা প্রসেস হচ্ছে...</div>
+    </div>
+    
+  </div>
+  
+  <script type="text/javascript">
+    (function() {
+      const config = {
+        // আপনার গিটহাবের র লিংকটি সরাসরি ইন্টারনাল পাথ থেকে ডাইনামিকালি লোড হবে
+        sourceUrl: './live_sports.m3u',
+        chunkSize: 24
+      };
+
+      let masterRegistry = {}; 
+      let categoryList = ['All'];
+      let activeCategory = 'All';
+      let activePage = 1;
+      let filteredKeys = [];
+      let playerInstance = null;
+
+      async function initializeSportsEngine() {
+        const workspace = document.getElementById('grid');
+        if (!workspace) return;
+
+        try {
+          const stream = await fetch(config.sourceUrl + '?ts=' + new Date().getTime());
+          if (!stream.ok) throw new Error();
+          const rawM3uData = await stream.text();
+          
+          processM3UFeed(rawM3uData);
+          buildCategoryInterface();
+          applyActiveFilters(true);
+          
+          workspace.addEventListener('scroll', handleLazyLoad);
+        } catch (err) {
+          workspace.innerHTML = '<div style="color:#ef4444;padding:20px;font-weight:bold;text-align:center;">❌ লাইভ স্পোর্টস ডাটা লোড করা যায়নি! গিটহাব একশন রান সফলভাবে শেষ হয়েছে কি না চেক করুন।</div>';
+        }
+      }
+
+      function processM3UFeed(text) {
+        const lines = text.split('\n');
+        masterRegistry = {}; 
+        const temporaryCategories = new Set();
+        let currentMeta = null;
+
+        for (let i = 0; i < lines.length; i++) {
+          let line = lines[i].trim();
+          if (line.indexOf('#EXTINF:') === 0) {
+            currentMeta = {};
+            const logoMatch = line.match(/tvg-logo="([^"]+)"/);
+            const groupMatch = line.match(/group-title="([^"]+)"/);
+            const commaIndex = line.lastIndexOf(',');
+            
+            let fullTitle = commaIndex !== -1 ? line.substring(commaIndex + 1).trim() : 'Premium Match';
+            
+            let cleanName = fullTitle;
+            let serverName = 'Server 1';
+            const serverMatch = fullTitle.match(/(.*)\s\((Server\s\d+)\)/i);
+            
+            if (serverMatch) {
+              cleanName = serverMatch[1].trim();
+              serverName = serverMatch[2].trim();
+            }
+
+            currentMeta.cleanName = cleanName;
+            currentMeta.serverName = serverName;
+            currentMeta.logo = logoMatch ? logoMatch[1] : 'https://i.imgur.com/Q5Z4y7T.png';
+            currentMeta.category = groupMatch ? groupMatch[1] : 'Live Sports';
+            
+            temporaryCategories.add(currentMeta.category);
+          } else if (line && line.indexOf('#') !== 0) {
+            if (currentMeta) {
+              currentMeta.url = line;
+              
+              if (!masterRegistry[currentMeta.cleanName]) {
+                masterRegistry[currentMeta.cleanName] = {
+                  logo: currentMeta.logo,
+                  category: currentMeta.category,
+                  servers: []
+                };
+              }
+              masterRegistry[currentMeta.cleanName].servers.push({
+                serverLabel: currentMeta.serverName,
+                streamUrl: currentMeta.url
+              });
+              
+              currentMeta = null;
+            }
+          }
+        }
+        categoryList = ['All', ...Array.from(temporaryCategories)];
+      }
+
+      function buildCategoryInterface() {
+        const container = document.getElementById('category-container');
+        if (!container) return;
+        
+        container.innerHTML = '';
+        categoryList.forEach(cat => {
+          const btn = document.createElement('button');
+          btn.className = 'category-btn' + (cat === activeCategory ? ' active' : '');
+          btn.innerText = cat;
+          btn.onclick = function() {
+            activeCategory = cat;
+            container.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            applyActiveFilters(true);
+          };
+          container.appendChild(btn);
+        });
+      }
+
+      function applyActiveFilters(resetScroll) {
+        if (resetScroll) {
+          activePage = 1;
+          const workspace = document.getElementById('grid');
+          if (workspace) workspace.scrollTop = 0;
+        }
+
+        const queryInput = document.getElementById('search');
+        const term = queryInput ? queryInput.value.toLowerCase() : '';
+        
+        const allChannelKeys = Object.keys(masterRegistry);
+        
+        filteredKeys = allChannelKeys.filter(key => {
+          const item = masterRegistry[key];
+          if (activeCategory !== 'All' && item.category !== activeCategory) {
+            return false;
+          }
+          if (key.toLowerCase().indexOf(term) === -1) {
+            return false;
+          }
+          return true;
+        });
+        
+        renderChannelsDisplay();
+      }
+
+      function renderChannelsDisplay() {
+        const workspace = document.getElementById('grid');
+        if (!workspace) return;
+        
+        if (filteredKeys.length === 0) {
+          workspace.innerHTML = '<div style="color:#8f9cae;padding:30px;text-align:center;width:100%;">কোনো লাইভ স্পোর্টস চ্যানেল খুঁজে পাওয়া যায়নি।</div>';
+          return;
+        }
+        
+        const edgeLimit = activePage * config.chunkSize;
+        const pageKeys = filteredKeys.slice(0, edgeLimit);
+        
+        workspace.innerHTML = '';
+        pageKeys.forEach(channelName => {
+          const dataNode = masterRegistry[channelName];
+          
+          const card = document.createElement('div');
+          card.className = 'channel-card';
+          
+          const logoImg = document.createElement('img');
+          logoImg.src = dataNode.logo;
+          logoImg.onerror = function() { logoImg.src = 'https://i.imgur.com/Q5Z4y7T.png'; };
+          
+          const labelSpan = document.createElement('span');
+          labelSpan.innerText = channelName;
+          
+          card.appendChild(logoImg);
+          card.appendChild(labelSpan);
+          
+          card.onclick = function() {
+            workspace.querySelectorAll('.channel-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            
+            deployServerSwitcher(channelName, dataNode.servers);
+          };
+          
+          workspace.appendChild(card);
+        });
+      }
+
+      function deployServerSwitcher(channelName, serversArray) {
+        const panel = document.getElementById('server-switcher-zone');
+        const container = document.getElementById('server-buttons-container');
+        if (!panel || !container) return;
+        
+        container.innerHTML = '';
+        serversArray.sort((a, b) => a.serverLabel.localeCompare(b.serverLabel, undefined, {numeric: true}));
+        
+        serversArray.forEach((srv, index) => {
+          const srvBtn = document.createElement('button');
+          srvBtn.className = 'server-btn';
+          srvBtn.innerText = srv.serverLabel;
+          
+          srvBtn.onclick = function() {
+            container.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
+            srvBtn.classList.add('active');
+            executeStreamPlayback(srv.streamUrl);
+          };
+          
+          container.appendChild(srvBtn);
+          
+          if (index === 0) {
+            srvBtn.classList.add('active');
+            executeStreamPlayback(srv.streamUrl);
+          }
+        });
+        
+        panel.style.display = 'block';
+      }
+
+      function handleLazyLoad() {
+        const workspace = document.getElementById('grid');
+        if (!workspace) return;
+        
+        if ((workspace.scrollTop + workspace.clientHeight) >= (workspace.scrollHeight - 50)) {
+          if ((activePage * config.chunkSize) < filteredKeys.length) {
+            activePage++;
+            renderChannelsDisplay();
+          }
+        }
+      }
+
+      function executeStreamPlayback(url) {
+        const video = document.getElementById('video-player');
+        if (!video) return;
+
+        if (playerInstance) {
+          playerInstance.destroy();
+          playerInstance = null;
+        }
+
+        if (window.Hls && window.Hls.isSupported()) {
+          playerInstance = new window.Hls();
+          playerInstance.loadSource(url);
+          playerInstance.attachMedia(video);
+          playerInstance.on(window.Hls.Events.MANIFEST_PARSED, function() {
+            video.play().catch(() => {});
+          });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = url;
+          video.play().catch(() => {});
+        }
+        
+        const pBox = document.getElementById('player-box');
+        if (pBox) pBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initializeSportsEngine();
+        
+        const searchDom = document.getElementById('search');
+        if (searchDom) {
+          searchDom.addEventListener('input', () => applyActiveFilters(true));
+        }
+
+        const syncBtn = document.getElementById('sync-refresh-btn');
+        if (syncBtn) {
+          syncBtn.addEventListener('click', () => initializeSportsEngine());
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>
