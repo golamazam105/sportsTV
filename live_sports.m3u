@@ -12,22 +12,22 @@ https://tvsen7.aynaott.com/tsports-hd/index.m3u8
 http://103.250.28.74:8000/play/a019/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_1/images/LOGO_HD/image.png" group-title="Sports", Sony Sports Ten 1 HD (Server 1)
-https://sl.vodep39240327.workers.dev/channel/SONY%20TEN%201.m3u8
+https://sl.vodep39240327.workers.dev/channel/SONY+TEN+1.m3u8
 
 #EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_1/images/LOGO_HD/image.png" group-title="Sports", Sony Sports Ten 1 HD (Server 2)
-https://sl.vodep39240327.workers.dev/channel/SONY%20TEN%201%20HD.m3u8
+https://sl.vodep39240327.workers.dev/channel/SONY+TEN+1+HD.m3u8
 
 #EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_2/images/LOGO_HD/image.png" group-title="Sports", Sony Sports Ten 2 HD (Server 1)
-https://sl.vodep39240327.workers.dev/channel/SONY%20TEN%202.m3u8
+https://sl.vodep39240327.workers.dev/channel/SONY+TEN+2.m3u8
 
 #EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_2/images/LOGO_HD/image.png" group-title="Sports", Sony Sports Ten 2 HD (Server 2)
-https://sl.vodep39240327.workers.dev/channel/SONY%20TEN%202%20HD.m3u8
+https://sl.vodep39240327.workers.dev/channel/SONY+TEN+2+HD.m3u8
 
 #EXTINF:-1 tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG0025TCMR.png?lock=720x540" group-title="Sports", Sony Sports Ten 3 HD (Server 1)
-https://sl.vodep39240327.workers.dev/channel/SONY%20TEN%203.m3u8
+https://sl.vodep39240327.workers.dev/channel/SONY+TEN+3.m3u8
 
 #EXTINF:-1 tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG0025TCMR.png?lock=720x540" group-title="Sports", Sony Sports Ten 3 HD (Server 2)
-https://sl.vodep39240327.workers.dev/channel/SONY%20TEN%203%20HD.m3u8
+https://sl.vodep39240327.workers.dev/channel/SONY+TEN+3+HD.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/E5jjKHI.png" group-title="Sports", Star Sports 1 HD (Server 1)
 http://103.253.18.58:8000/play/a00m
