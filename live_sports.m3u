@@ -20,12 +20,9 @@ http://103.253.18.58:8000/play/a00m
 #EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_SPORTS_1_HINDI/images/LOGO_HD/image.png" group-title="Sports", Star Sports 1 Hindi (Server 1)
 http://103.253.18.58:8000/play/a03o
 
-#EXTINF:-1 tvg-logo="https://cricket.willow.tv/_nuxt/img/willow_blue_logo.362ed8e.png" group-title="Premium OTT & Apps", Willow Cricket HD (Server 1)
-https://tvsen5.aynaott.com/willowhd/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://cricket.willow.tv/_nuxt/img/willow_blue_logo.362ed8e.png" group-title="Premium OTT & Apps", Willow Cricket HD (Server 2)
+#EXTINF:-1 tvg-logo="https://provider-static.plex.tv/epg/cms/production/acf3d1d8-c53e-49ca-86e9-0d9410b106b4/Willow_Sports_dark_Background_1500_1000_color.png" group-title="Premium OTT & Apps", Willow Cricket HD (Server 1)
 https://d36r8jifhgsk5j.cloudfront.net/Willow_TV1080p.m3u8
 
-#EXTINF:-1 tvg-logo="https://cricket.willow.tv/_nuxt/img/willow_blue_logo.362ed8e.png" group-title="Premium OTT & Apps", Willow Cricket HD (Server 3)
+#EXTINF:-1 tvg-logo="https://provider-static.plex.tv/epg/cms/production/acf3d1d8-c53e-49ca-86e9-0d9410b106b4/Willow_Sports_dark_Background_1500_1000_color.png" group-title="Premium OTT & Apps", Willow Cricket HD (Server 2)
 https://d36r8jifhgsk5j.cloudfront.net/Willow_TV.m3u8
 
