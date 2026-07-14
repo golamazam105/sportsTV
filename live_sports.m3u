@@ -6,7 +6,7 @@ http://hbbtvapp.ert.gr/stream.php/v/vid_ertsports_mpeg.2ts
 http://hbbtvapp.ert.gr/stream.php/v/vid_ertplay2_mpeg.2ts
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/EsczO2H.png" group-title="Sports", T Sports HD (Server 3)
-https://tvsen7.aynaott.com/tsports-hd/index.m3u8
+https://trs1.aynaott.com/tsports/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/EsczO2H.png" group-title="Sports", T Sports HD (Server 4)
 https://live-us1.thaimomo.com/live-as/chtsport-1/playlist.m3u8
