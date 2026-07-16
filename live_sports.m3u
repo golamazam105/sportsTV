@@ -1,14 +1,20 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://i.imgur.com/EsczO2H.png" group-title="Sports", T Sports HD (Server 1)
+#EXTINF:-1 tvg-logo="https://i.imgur.com/kcaF4jb.png" group-title="Sports", T Sports HD (Server 1)
+http://185.102.171.218/CablenetSports1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/kcaF4jb.png" group-title="Sports", T Sports HD (Server 2)
+http://185.102.171.218/CablenetSports2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/kcaF4jb.png" group-title="Sports", T Sports HD (Server 3)
 http://hbbtvapp.ert.gr/stream.php/v/vid_ertsports_mpeg.2ts
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/EsczO2H.png" group-title="Sports", T Sports HD (Server 2)
+#EXTINF:-1 tvg-logo="https://i.imgur.com/kcaF4jb.png" group-title="Sports", T Sports HD (Server 4)
 http://hbbtvapp.ert.gr/stream.php/v/vid_ertplay2_mpeg.2ts
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/EsczO2H.png" group-title="Sports", T Sports HD (Server 3)
+#EXTINF:-1 tvg-logo="https://i.imgur.com/kcaF4jb.png" group-title="Sports", T Sports HD (Server 5)
 https://trs1.aynaott.com/tsports/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/EsczO2H.png" group-title="Sports", T Sports HD (Server 4)
+#EXTINF:-1 tvg-logo="https://i.imgur.com/kcaF4jb.png" group-title="Sports", T Sports HD (Server 6)
 https://live-us1.thaimomo.com/live-as/chtsport-1/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/CPm6GHA.png" group-title="Sports", PTV Sports Live (Server 1)
