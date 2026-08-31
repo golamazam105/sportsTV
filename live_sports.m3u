@@ -15,16 +15,7 @@ https://live-us1.thaimomo.com/live-as/chtsport-1/playlist.m3u8
 http://103.250.28.74:8000/play/a019/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1302.png" group-title="Sports", Sky Sports Cricket HD (Server 1)
-https://7nyaler.streamhostingcdn.top/stream/10/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1302.png" group-title="Sports", Sky Sports Cricket HD (Server 2)
 https://xemzi.short.gy/2000006
-
-#EXTINF:-1 tvg-logo="https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1301.png" group-title="Sports", Sky Sports Main Event (Server 1)
-https://7nyaler.streamhostingcdn.top/stream/19/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1301.png" group-title="Sports", Sky Sports Main Event (Server 2)
-https://xemzi.short.gy/2000001
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/E5jjKHI.png" group-title="Sports", Star Sports 1 HD (Server 1)
 http://41.205.93.154/STARSPORTS1/index.m3u8
