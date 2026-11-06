@@ -30,16 +30,16 @@ https://live-us1.thaimomo.com/live-as/chtsport-1/playlist.m3u8
 https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/KyI0s5n.png" group-title="Sports", T Sports HD (Server 3)
-http://37.49.224.5:80/stream/1/index.m3u8
+http://37.49.224.5/stream/1/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/KyI0s5n.png" group-title="Sports", T Sports HD (Server 4)
-http://37.49.224.5:80/stream/2/index.m3u8
+http://37.49.224.5/stream/2/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/KyI0s5n.png" group-title="Sports", T Sports HD (Server 5)
-http://37.49.224.5:80/stream/3/index.m3u8
+http://37.49.224.5/stream/3/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/KyI0s5n.png" group-title="Sports", T Sports HD (Server 6)
-http://37.49.224.5:80/stream/4/index.m3u8
+http://37.49.224.5/stream/4/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/KyI0s5n.png" group-title="Sports", T Sports HD (Server 7)
 http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/86.m3u8
