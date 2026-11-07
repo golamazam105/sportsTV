@@ -2,26 +2,11 @@
 #EXTINF:-1 tvg-logo="https://i.imgur.com/CPm6GHA.png" group-title="Sports", PTV Sports Live (Server 1)
 http://103.250.28.74:8000/play/a019/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_1/images/LOGO_HD/image.png" group-title="Sports", Sony Sports Ten 1 HD (Server 1)
-http://103.151.60.162:2122/play/a01c/index.m3u8?hls
-
-#EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_1/images/LOGO_HD/image.png" group-title="Sports", Sony Sports Ten 1 HD (Server 2)
-http://103.185.24.134:3001/SonyTenSports1/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_2/images/LOGO_HD/image.png" group-title="Sports", Sony Sports Ten 2 HD (Server 1)
-http://103.151.60.162:2122/play/a01b/index.m3u8?hls
-
 #EXTINF:-1 tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG0025TCMR.png?lock=720x540" group-title="Sports", Sony Sports Ten 3 HD (Server 1)
 http://103.151.60.162:2122/play/a01t/index.m3u8?hls
 
-#EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SONY_SPORTS_TEN_5/images/LOGO_HD/image.png" group-title="Sports", Sony Sports Ten 5 HD (Server 1)
-http://103.151.60.162:2122/play/a028/index.m3u8?hls
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/Mh9tKPx.png" group-title="Sports", Star Sports Select 1 (Server 1)
-http://103.151.60.162:2122/play/a026/index.m3u8?hls
-
 #EXTINF:-1 tvg-logo="https://i.imgur.com/FtRT73R.png" group-title="Sports", Star Sports Select 2 (Server 1)
-http://103.151.60.162:2122/play/a027/index.m3u8?hls
+http://tvsen7.aynascope.net/ssport2hd/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/KyI0s5n.png" group-title="Sports", T Sports HD (Server 1)
 https://live-us1.thaimomo.com/live-as/chtsport-1/playlist.m3u8
