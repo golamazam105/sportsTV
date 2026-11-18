@@ -30,7 +30,7 @@ http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/86.m3u8
 http://181.78.79.131:8000/play/a0mo
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/KyI0s5n.png" group-title="Sports", T Sports HD (Server 9)
-http://209.45.101.130:8040/play/a03s/index.m3u8
+http://205.235.6.29:8000/play/a0xa/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/KyI0s5n.png" group-title="Sports", T Sports HD (Server 10)
 http://181.78.79.131:8000/play/a0q9
